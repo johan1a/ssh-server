@@ -1,6 +1,9 @@
 import asyncio, asyncssh, crypt, sys, os
 
 ssh_dir = os.environ.get('HOME') + "/.ssh"
+port = os.environ.get('PORT', 8022)
+
+print('Starting app at port: ' + port)
 
 def handle_client(process):
     process.stdout.write('Welcome to my SSH server, %s!\n' %
@@ -8,7 +11,7 @@ def handle_client(process):
     process.exit(0)
 
 async def start_server():
-    await asyncssh.listen('', 8022, server_host_keys=[ssh_dir + '/heroku_ssh_rsa'],
+    await asyncssh.listen('', port, server_host_keys=[ssh_dir + '/heroku_ssh_rsa'],
                           authorized_client_keys=ssh_dir + '/ssh_user_ca',
                           process_factory=handle_client)
 

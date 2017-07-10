@@ -16,6 +16,9 @@ chmod 600 ${HOME}/.ssh/heroku_ssh_rsa
 echo "${CLIENT_PUBLIC_KEY}" >> ${HOME}/.ssh/ssh_user_ca
 chmod 644 ${HOME}/.ssh/ssh_user_ca
 
+pwd
+ls -l ${HOME}/.ssh
+
 # Preload the known_hosts file  (see "version 2" below)
 
 # Start the SSH tunnel if not already running
