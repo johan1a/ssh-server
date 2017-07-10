@@ -3,7 +3,7 @@ import asyncio, asyncssh, crypt, sys, os
 ssh_dir = os.environ.get('HOME') + "/.ssh"
 port = os.environ.get('PORT', 8022)
 
-print('Starting app at port: ' + port)
+print('Starting app at port: ' + str(port))
 
 def handle_client(process):
     process.stdout.write('Welcome to my SSH server, %s!\n' %
