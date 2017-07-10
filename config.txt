@@ -1,0 +1,3 @@
+heroku config:set SSH_PRIVATE_KEY="`cat ssh_keys/heroku_ssh_rsa`"
+heroku config:set SSH_PUBLIC_KEY="`cat ssh_keys/heroku_ssh_rsa.pub`"
+
