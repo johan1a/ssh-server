@@ -1,2 +1,2 @@
-web: FLASK_APP=app.py flask run
+web: gunicorn app:app --log-file=-
 

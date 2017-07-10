@@ -1,3 +1,4 @@
 asyncssh==1.10.1
 cryptography==1.9
 Flask==0.12.2
+gunicorn==19.7.1
